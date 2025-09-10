@@ -1,11 +1,11 @@
 # Rust build output
-tsp_sa/target/
+sa/target/
 
 # Rust backup files
-tsp_sa/**/*.rs.bk
+sa/**/*.rs.bk
 
 # Python virtual environment (if you create it inside python/)
-python/venv/
+visualization/venv/
 
 # Python cache
 python/__pycache__/
