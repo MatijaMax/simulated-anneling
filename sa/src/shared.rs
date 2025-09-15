@@ -1,4 +1,6 @@
 use std::collections::HashMap;
+use std::fs::File;
+use std::io::{self, Write};
 
 #[derive(Clone, Debug, Eq, PartialEq, Hash)]
 pub struct City {
@@ -54,4 +56,14 @@ pub fn parse_input(file_path: &str) -> (Vec<City>, DistanceMatrix) {
 
     let cities = cities_map.into_keys().collect::<Vec<_>>();
     (cities, distances)
+}
+
+// Writer
+pub fn write_tour_to_file(filename: &str, tour: &Vec<City>, distances: &DistanceMatrix) -> io::Result<()> {
+    let mut file = File::create(filename)?;
+    for city in tour {
+        writeln!(file, "{},{}", city.name, city.country)?;
+    }
+    writeln!(file, "Total distance: {}", tour_distance(tour, distances))?;
+    Ok(())
 }
