@@ -4,7 +4,7 @@ mod sequential;
 
 use shared::*;
 use sequential::SA;
-
+use parallel::run_parallel_sa;
 
 fn main() {
     // Parse input file
@@ -18,17 +18,14 @@ fn main() {
     let best_seq = sa_seq.run();
     println!("Sequential BEST distance: {}", tour_distance(&best_seq, &distances));
 
-    // BEST tour sequential
-    // println!("\nBEST tour sequential:");
-    // for city in &best_seq {
-    //     println!("{} ({})", city.name, city.country);
-    // }
-
     // Parallel SA
     println!("\nParallel SA:");
-    println!("Parallel BEST distance: ");
+    let best_par = run_parallel_sa(cities.clone(), distances.clone(), 8); 
+    println!("Parallel BEST distance: {}", tour_distance(&best_par, &distances));
 
     // BEST tour parallel
-    println!("\nBEST tour parallel:");
-
+    // println!("\nBEST tour parallel:");
+    // for city in &best_par {
+    //     println!("{} ({})", city.name, city.country);
+    // }
 }
