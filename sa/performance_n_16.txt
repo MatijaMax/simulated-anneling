@@ -1,0 +1,6 @@
+n = 16
+Sequential time: 16.012 s
+Parallel time: 17.252 s
+Speedup: 0.93x
+Sequential distance: 6505
+Parallel distance: 6505

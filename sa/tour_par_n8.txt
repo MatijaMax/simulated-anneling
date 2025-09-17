@@ -1,0 +1,9 @@
+Zurich,Switzerland
+Venice,Italy
+Prague,Czech Republic
+Berlin,Germany
+Brussels,Belgium
+London,United Kingdom
+Paris,France
+Lyon,France
+Total distance: 3810

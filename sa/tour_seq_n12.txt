@@ -1,0 +1,13 @@
+Berlin,Germany
+Prague,Czech Republic
+Vienna,Austria
+Budapest,Hungary
+Venice,Italy
+Zurich,Switzerland
+Geneva,Switzerland
+Lyon,France
+Paris,France
+London,United Kingdom
+Brussels,Belgium
+Frankfurt,Germany
+Total distance: 4533
