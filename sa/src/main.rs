@@ -13,7 +13,7 @@ fn main() {
     let (cities, distances) = parse_input("../input.txt");
     println!("Number of cities: {}", cities.len());
 
-    let ns = [8, 12, 16];
+    let ns = [8, 12, 16, 20];
     for &n in &ns {
         let subset_cities = cities[..n].to_vec();
 
@@ -31,9 +31,9 @@ fn main() {
         println!("n={}: Parallel {:.3}s", n, duration_par);
 
         // Write tours and distances to tour_seq.txt and tour_par.txt
-        write_tour_to_file(&format!("tour_seq_n{}.txt", n), &best_seq, &distances)
+        write_tour_to_file(&format!("tour_seq_n_{}.txt", n), &best_seq, &distances)
             .expect("Failed to write sequential tour");
-        write_tour_to_file(&format!("tour_par_n{}.txt", n), &best_par, &distances)
+        write_tour_to_file(&format!("tour_par_n_{}.txt", n), &best_par, &distances)
             .expect("Failed to write parallel tour");
 
         // Performance summary for n

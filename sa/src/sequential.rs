@@ -11,15 +11,16 @@ pub struct SA {
 
 impl SA {
     pub fn new(cities: Vec<City>, distances: DistanceMatrix) -> Self {
-        let mut rng = StdRng::seed_from_u64(0);
+        let seed: u64 = thread_rng().gen();
+        let mut rng = StdRng::seed_from_u64(seed);
         let mut tour = cities.clone();
         shuffle_tour(&mut tour, &mut rng);
 
         SA {
             cities: tour,
             distances,
-            k_max: 500_000,
-            k_t: 500.0,
+            k_max: 50000,
+            k_t: 5000.0,
             rng,
         }
     }
@@ -42,7 +43,7 @@ impl SA {
     }
 
     pub fn run(&mut self) -> Vec<City> {
-        for k in 0..self.k_max {
+        for k in 0..=self.k_max {
             let t = self.temperature(k);
             let current_distance = tour_distance(&self.cities, &self.distances) as i32;
 
@@ -57,7 +58,7 @@ impl SA {
                 self.cities = next_tour;
             }
 
-            if k % 50_000 == 0 {
+            if k % 25_000 == 0 {
                 println!("Iteration: {}, Distance: {}", k, tour_distance(&self.cities, &self.distances));
             }
         }

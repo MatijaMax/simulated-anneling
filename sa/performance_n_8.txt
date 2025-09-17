@@ -1,6 +1,6 @@
 n = 8
-Sequential time: 8.753 s
-Parallel time: 9.316 s
-Speedup: 0.94x
-Sequential distance: 3810
-Parallel distance: 3810
+Sequential time: 1.426 s
+Parallel time: 1.021 s
+Speedup: 1.40x
+Sequential distance: 4982
+Parallel distance: 4982

@@ -1,0 +1,21 @@
+Lyon,France
+Geneva,Switzerland
+Berlin,Germany
+Prague,Czech Republic
+Vienna,Austria
+Budapest,Hungary
+Zagreb,Croatia
+Zurich,Switzerland
+Paris,France
+London,United Kingdom
+Amsterdam,Netherlands
+Brussels,Belgium
+Frankfurt,Germany
+Munich,Germany
+Milan,Italy
+Venice,Italy
+Florence,Italy
+Rome,Italy
+Barcelona,Spain
+Madrid,Spain
+Total distance: 9461

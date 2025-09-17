@@ -1,0 +1,13 @@
+Frankfurt,Germany
+Amsterdam,Netherlands
+Brussels,Belgium
+Madrid,Spain
+Lyon,France
+Zurich,Switzerland
+Milan,Italy
+Venice,Italy
+Zagreb,Croatia
+Vienna,Austria
+Prague,Czech Republic
+Munich,Germany
+Total distance: 5860

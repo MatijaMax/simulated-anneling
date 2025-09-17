@@ -1,0 +1,17 @@
+Milan,Italy
+Zurich,Switzerland
+Munich,Germany
+Frankfurt,Germany
+Brussels,Belgium
+London,United Kingdom
+Amsterdam,Netherlands
+Berlin,Germany
+Prague,Czech Republic
+Vienna,Austria
+Zagreb,Croatia
+Venice,Italy
+Rome,Italy
+Madrid,Spain
+Lyon,France
+Geneva,Switzerland
+Total distance: 7560

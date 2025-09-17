@@ -1,0 +1,17 @@
+Prague,Czech Republic
+Berlin,Germany
+Munich,Germany
+Frankfurt,Germany
+Brussels,Belgium
+Amsterdam,Netherlands
+London,United Kingdom
+Madrid,Spain
+Lyon,France
+Geneva,Switzerland
+Zurich,Switzerland
+Milan,Italy
+Rome,Italy
+Venice,Italy
+Zagreb,Croatia
+Vienna,Austria
+Total distance: 7475

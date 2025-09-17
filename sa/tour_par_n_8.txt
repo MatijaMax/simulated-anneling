@@ -1,0 +1,9 @@
+Zurich,Switzerland
+Milan,Italy
+Lyon,France
+Madrid,Spain
+Brussels,Belgium
+Prague,Czech Republic
+Vienna,Austria
+Munich,Germany
+Total distance: 4982
