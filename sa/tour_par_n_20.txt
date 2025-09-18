@@ -1,6 +1,11 @@
-Frankfurt,Germany
-Munich,Germany
+Paris,France
+London,United Kingdom
+Brussels,Belgium
+Amsterdam,Netherlands
 Berlin,Germany
+Frankfurt,Germany
+Zurich,Switzerland
+Munich,Germany
 Prague,Czech Republic
 Vienna,Austria
 Budapest,Hungary
@@ -9,13 +14,8 @@ Venice,Italy
 Rome,Italy
 Florence,Italy
 Milan,Italy
-Zurich,Switzerland
 Geneva,Switzerland
 Lyon,France
 Barcelona,Spain
 Madrid,Spain
-Paris,France
-London,United Kingdom
-Amsterdam,Netherlands
-Brussels,Belgium
-Total distance: 7868
+Total distance: 8203

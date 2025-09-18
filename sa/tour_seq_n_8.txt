@@ -1,9 +1,9 @@
-Prague,Czech Republic
+Budapest,Hungary
 Vienna,Austria
-Munich,Germany
-Zurich,Switzerland
-Milan,Italy
-Lyon,France
+Florence,Italy
+Rome,Italy
 Madrid,Spain
-Brussels,Belgium
-Total distance: 4982
+Paris,France
+Geneva,Switzerland
+Berlin,Germany
+Total distance: 6093

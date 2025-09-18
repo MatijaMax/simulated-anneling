@@ -1,17 +1,17 @@
-Prague,Czech Republic
+Barcelona,Spain
+Madrid,Spain
+Paris,France
+London,United Kingdom
+Amsterdam,Netherlands
 Berlin,Germany
 Munich,Germany
-Frankfurt,Germany
-Brussels,Belgium
-Amsterdam,Netherlands
-London,United Kingdom
-Madrid,Spain
-Lyon,France
-Geneva,Switzerland
-Zurich,Switzerland
-Milan,Italy
-Rome,Italy
-Venice,Italy
-Zagreb,Croatia
 Vienna,Austria
-Total distance: 7475
+Budapest,Hungary
+Zagreb,Croatia
+Venice,Italy
+Florence,Italy
+Rome,Italy
+Zurich,Switzerland
+Geneva,Switzerland
+Lyon,France
+Total distance: 7328

@@ -1,45 +1,71 @@
+# visualizer.py
 import matplotlib.pyplot as plt
 import seaborn as sns
+import glob
+import numpy as np
 
-sns.set(style="whitegrid") 
+sns.set(style="whitegrid")
+ns, seq_times, par_times, speedups, seq_dists, par_dists = [], [], [], [], [], []
 
-def load_tour(filename):
-    """Load tour from TXT file and extract city names and total distance."""
-    with open(filename) as f:
-        lines = [line.strip() for line in f if line and not line.startswith("Total distance")]
-        cities = [line.split(",")[0] for line in lines]  
-    total_distance = 0
-    with open(filename) as f:
-        for line in f:
-            if line.startswith("Total distance"):
-                total_distance = int(line.split(":")[1].strip())
-                break
-    return cities, total_distance
+for fname in sorted(glob.glob("../sa/performance_n_*.txt")):
+    with open(fname) as f:
+        data = f.read()
+        n = int(data.split("n =")[1].split()[0])
+        seq_time = float(data.split("Sequential time:")[1].split()[0])
+        par_time = float(data.split("Parallel time:")[1].split()[0])
+        speedup = float(data.split("Speedup:")[1].split("x")[0])
+        seq_dist = int(data.split("Sequential distance:")[1].split()[0])
+        par_dist = int(data.split("Parallel distance:")[1].split()[0])
+        
+        ns.append(n)
+        seq_times.append(seq_time)
+        par_times.append(par_time)
+        speedups.append(speedup)
+        seq_dists.append(seq_dist)
+        par_dists.append(par_dist)
 
-seq_cities, seq_total = load_tour("../sa/tour_seq.txt")
-par_cities, par_total = load_tour("../sa/tour_par.txt")
 
-seq_y = [1] * len(seq_cities)
-par_y = [0] * len(par_cities)
+sorted_data = sorted(zip(ns, seq_times, par_times, speedups, seq_dists, par_dists))
+ns, seq_times, par_times, speedups, seq_dists, par_dists = map(list, zip(*sorted_data))
 
-plt.figure(figsize=(15, 3))
+# TIMES
+x = np.arange(len(ns)) 
+width = 0.35 
 
-palette = sns.color_palette("Set1", n_colors=2)
+plt.figure(figsize=(10,5))
+plt.bar(x - width/2, seq_times, width, label="Sequential", color="blue")
+plt.bar(x + width/2, par_times, width, label="Parallel", color="red")
 
-plt.plot(range(len(seq_cities)), seq_y, marker='o', label=f'Sequential (Total {seq_total})', color=palette[0])
-plt.plot(range(len(par_cities)), par_y, marker='o', label=f'Parallel (Total {par_total})', color=palette[1])
-
-for i, city in enumerate(seq_cities):
-    plt.text(i, seq_y[i]+0.05, city, rotation=45, ha='right', fontsize=8, color=palette[0])
-
-for i, city in enumerate(par_cities):
-    plt.text(i, par_y[i]-0.05, city, rotation=45, ha='right', fontsize=8, color=palette[1])
-
-plt.yticks([0,1], ["Parallel","Sequential"])
-plt.xticks([]) 
+plt.xlabel("n")
+plt.ylabel("Time (s)")
+plt.title("Sequential vs parallel execution time")
+plt.xticks(x, ns)
 plt.legend()
-plt.grid(axis='x', linestyle='--', alpha=0.5)
-sns.despine()
+plt.grid(axis='y', linestyle='--', alpha=0.5)
 plt.tight_layout()
-plt.savefig("seq_vs_par.png", dpi=300)
-print("Plot saved as seq_vs_par.png")
+plt.savefig("performance_times.png", dpi=300)
+print("Saved performance_times.png")
+
+# SPEED UP/SLOW DOWN
+plt.figure(figsize=(10,5))
+plt.plot(ns, speedups, marker='o', color='green')
+plt.xlabel("n")
+plt.ylabel("Speed up/slow down (seq_time / par_time)")
+plt.title("Parallel speed up/slow down")
+plt.grid(True)
+plt.tight_layout()
+plt.savefig("performance_speedup.png", dpi=300)
+print("Saved performance_speedup.png")
+
+# DISTANCES
+plt.figure(figsize=(10,5))
+plt.plot(ns, seq_dists, marker='o', label="Sequential distance")
+plt.plot(ns, par_dists, marker='o', label="Parallel distance")
+plt.xlabel("n")
+plt.ylabel("Distance")
+plt.title("Sequential vs parallel distance")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.savefig("performance_distance.png", dpi=300)
+print("Saved performance_distance.png")

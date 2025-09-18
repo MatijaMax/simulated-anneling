@@ -1,13 +1,13 @@
-Milan,Italy
-Zurich,Switzerland
-Lyon,France
-Madrid,Spain
-Brussels,Belgium
-Amsterdam,Netherlands
-Frankfurt,Germany
-Munich,Germany
-Prague,Czech Republic
+Berlin,Germany
+Budapest,Hungary
 Vienna,Austria
-Zagreb,Croatia
-Venice,Italy
-Total distance: 5860
+Florence,Italy
+Rome,Italy
+Barcelona,Spain
+Madrid,Spain
+Paris,France
+Lyon,France
+Geneva,Switzerland
+Zurich,Switzerland
+Munich,Germany
+Total distance: 6628

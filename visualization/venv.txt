@@ -1,5 +1,5 @@
 python3 -m venv venv
 source venv/bin/activate
-pip install matplotlib pandas seaborn
+pip install matplotlib pandas seaborn numpy
 python visualizer.py
 deactivate
